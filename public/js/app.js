@@ -5,7 +5,7 @@ weatherForm.addEventListener('submit', (e) => {
     const location = search.value
     e.preventDefault()
     outputBox.innerHTML = ''
-    fetch(`http://localhost:3000/weather?address=${location}`).then((response) => {
+    fetch(`/weather?address=${location}`).then((response) => {
     response.json().then((data) => {
         console.log(data)
         outputBox.innerHTML = `${data.location}<br>The weather is ${data.forecast.description}.<br>The temperature is ${data.forecast.currentTemp}, it feels like ${data.forecast.currentFeelsLike}`
